@@ -377,8 +377,11 @@
         // MINOR ROAD: SOI 22
         // ==========================================================================
         const soi22Path = [
-            [13.733658, 100.565133],
-            [13.726209, 100.565090],
+            [13.733623, 100.565175],
+            [13.732573, 100.565129],
+            [13.731995, 100.565099],
+            [13.730703, 100.565123],
+            [13.726235, 100.565113],
             [13.724860, 100.564873],  
             [13.723766, 100.564787]  
         ];
@@ -483,6 +486,13 @@
             {
                 name: "Path to Hakumi",
                 path: [[13.733181, 100.567313], [13.733000, 100.568114]],
+                color: "#ff33aa", 
+                weight: 3,
+                dashArray: '5, 5'
+            },
+            {
+                name: "Path to Anela",
+                path: [[13.732770, 100.565136], [13.732774, 100.564840]],
                 color: "#ff33aa", 
                 weight: 3,
                 dashArray: '5, 5'
@@ -674,7 +684,7 @@
             { lat: 13.730642, lng: 100.562768, name: "Barbie 18 Nuru Massage", category: "💆💆‍♂️ Elite Relaxation & Wellness", icon: createBrandIcon('Barbie18'), text: "Premium sensory wellness space engineered around upscale personal relaxation care.", google: "https://maps.app.goo.gl/JosMpoUyA9LX4N6p7" },
             { lat: 13.738537, lng: 100.557691, name: "Romance Nuru Massage", category: "💆💆‍♂️ Elite Relaxation & Wellness", icon: createBrandIcon('Romance'), text: "Exquisite lounge offering flagship therapeutic workflows and modern relaxation designs.", google: "https://maps.app.goo.gl/XwJGrkHstuYkdsLQ8" },
             { lat: 13.733105, lng: 100.564653, name: "Lucy Nuru Massage", category: "💆💆‍♂️ Elite Relaxation & Wellness", icon: createBrandIcon('Lucy'), text: "Sophisticated themed relaxation sanctuary nestled within the Sukhumvit corridor.", google: "https://maps.app.goo.gl/VYUF7UPq9xE3xFAr5" },
-            { lat: 13.732787, lng: 100.564864, name: "Luxe Nuru Massage", category: "💆💆‍♂️ Elite Relaxation & Wellness", icon: createBrandIcon('Luxe'), text: "Sophisticated themed relaxation sanctuary nestled within the Sukhumvit corridor.", google: "https://maps.app.goo.gl/jtTsyZVn769q48D37" }
+            { lat: 13.732726, lng: 100.564848, name: "Luxe Nuru Massage", category: "💆💆‍♂️ Elite Relaxation & Wellness", icon: createBrandIcon('Luxe'), text: "Sophisticated themed relaxation sanctuary nestled within the Sukhumvit corridor.", google: "https://maps.app.goo.gl/jtTsyZVn769q48D37" }
         ];
 
         window.showPanel = function(loc) {
@@ -712,4 +722,3 @@
     </script>
 </body>
 </html>
- 
