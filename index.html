@@ -443,6 +443,43 @@
         });
 
         // ==========================================================================
+        // MINOR ROAD 1: SOI 31 (Text on middle portion only)
+        // ==========================================================================
+        const soi31Path = [
+            [13.733045, 100.566015],
+            [13.733139, 100.566065],
+            [13.736677, 100.566854],
+            [13.737693, 100.566994],
+            [13.737779, 100.566412], 
+            [13.738185, 100.566441] 
+        ];
+
+        const lineSoi31 = L.polyline(soi31Path, {
+            color: '#aaaaaa',
+            weight: 4,
+            opacity: 0.75,
+            lineCap: 'round',
+            lineJoin: 'round',
+            interactive: false
+        }).addTo(map);
+
+        const textPathSoi31 = L.polyline([soi31Path[1], soi31Path[2]], {
+            opacity: 0
+        }).addTo(map);
+
+        textPathSoi31.setText("Sukhumvit Soi 31", {
+            center: true,
+            offset: -6,
+            attributes: {
+                'fill': '#ffffff',
+                'font-weight': '500',
+                'font-size': '10px',
+                'font-family': 'Helvetica Neue, Arial, sans-serif',
+                'letter-spacing': '0.5px'
+            }
+        });
+
+        // ==========================================================================
         // MINOR ROAD 2: SOI 33
         // ==========================================================================
         const soi33Path = [
