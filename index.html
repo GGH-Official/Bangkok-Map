@@ -306,7 +306,7 @@
             map.invalidateSize();
         }, 200);
 
-        // ==========================================================================
+      // ==========================================================================
         // INJECT NAV BUTTONS DIRECTLY OVER MAP
         // ==========================================================================
         const navControlDiv = document.createElement('div');
@@ -314,6 +314,7 @@
         navControlDiv.innerHTML = `
             <button id="nav-sukhumvit" class="nav-btn btn-sukhumvit">📍 Sukhumvit</button>
             <button id="nav-patpong" class="nav-btn btn-patpong">📍 Patpong</button>
+            <button id="nav-huaikhwang" class="nav-btn btn-huaikhwang">📍 Huai Khwang</button>
         `;
         mapContainer.appendChild(navControlDiv);
 
@@ -323,6 +324,10 @@
 
         document.getElementById('nav-patpong').addEventListener('click', function() {
             map.flyTo([13.7284, 100.5280], 15, { duration: 1.5 });
+        });
+
+        document.getElementById('nav-huaikhwang').addEventListener('click', function() {
+            map.flyTo([13.7766, 100.5744], 15, { duration: 1.5 });
         });
 
         // ==========================================================================
