@@ -331,6 +331,55 @@
         });
 
         // ==========================================================================
+        // MAIN ROAD: RATCHADAPHISEK
+        // ==========================================================================
+        const ratchadaPath = [
+            [13.763809, 100.568371],
+            [13.769090, 100.572520],
+            [13.770003, 100.573001],
+            [13.771673, 100.573343],
+            [13.789063, 100.574164]
+        ];
+
+        const ratchadaLine = L.polyline(ratchadaPath, {
+            color: '#ff0077',
+            weight: 6,
+            opacity: 0.9,
+            lineCap: 'round',
+            lineJoin: 'round'
+        }).addTo(map);
+
+        const ratchadaGlow = L.polyline(ratchadaPath, {
+            color: '#ff00ff',
+            weight: 12,
+            opacity: 0.3,
+            lineCap: 'round',
+            lineJoin: 'round'
+        }).addTo(map);
+
+        ratchadaLine.setText("RATCHADAPHISEK RD", {
+            center: true,
+            offset: -8,
+            attributes: {
+                'fill': '#00ffff',
+                'font-weight': 'bold',
+                'font-size': '12px',
+                'font-family': 'Helvetica Neue, Arial, sans-serif',
+                'letter-spacing': '2px',
+                'filter': 'drop-shadow(0px 0px 3px #00ffff)'
+            }
+        });
+
+        const ratchadaData = {
+            name: "Ratchadaphisek Rd",
+            category: "🛣️ Main Entertainment Artery",
+            text: "A major road in Bangkok serving as another massive hub for nightlife, massive entertainment complexes, and dining.",
+            google: "https://www.google.com/maps/search/?api=1&query=13.7766,100.5744" 
+        };
+
+        ratchadaLine.on('click', () => showPanel(ratchadaData));
+        
+        // ==========================================================================
         // MAIN ROAD: SUKHUMVIT (With Text Bending Along Path)
         // ==========================================================================
         const sukhumvitCurvedPath = [
