@@ -430,6 +430,43 @@
         roadLine.on('click', () => showPanel(sukhumvitData));
 
         // ==========================================================================
+        // MINOR ROAD: RCA Alley
+        // ==========================================================================
+        const RCAAlleyPath = [
+            [13.750028, 100.576684],
+            [13.750391, 100.576344],
+            [13.751279, 100.575616],
+            [13.753011, 100.574470],
+            [13.755450, 100.573389],
+            [13.756677, 100.573010],
+            [13.758818, 100.572619],
+            [13.760294, 100.572528],
+            [13.764666, 100.572722],   
+            [13.723766, 100.564787]  
+        ];
+
+        const RCAAlley = L.polyline(RCAAlleyPath, {
+            color: '#aaaaaa',
+            weight: 4,
+            opacity: 0.75,
+            lineCap: 'round',
+            lineJoin: 'round',
+            interactive: false
+        }).addTo(map);
+
+        RCAAlley.setText("RCA Alley", {
+            center: true,
+            offset: -6,
+            attributes: {
+                'fill': '#ffffff',
+                'font-weight': '500',
+                'font-size': '10px',
+                'font-family': 'Helvetica Neue, Arial, sans-serif',
+                'letter-spacing': '0.5px'
+            }
+        });
+        
+        // ==========================================================================
         // MINOR ROAD: SOI 22
         // ==========================================================================
         const soi22Path = [
