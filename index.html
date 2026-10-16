@@ -22,14 +22,28 @@
         }
 
         /* ---> Remove weird grey gridlines that suddenly appeared <--- */
-        .leaflet-container {
-            background: #0d0614 !important;
-        }
+        /* Update this entire block in your existing CSS */
 
-        /* Adjust CARTO tile colors and darkness & weird grey colors that suddenly appeared */
-        .leaflet-tile-pane {
-        filter: brightness(0.65) contrast(1.3) saturate(0.1);
-        }
+/* Fix Leaflet / CARTO tile grid lines and establish a dark base */
+.leaflet-container {
+    background: #0d0614 !important; /* Matches your body background */
+}
+
+.leaflet-tile-pane {
+    /* 1. Target the raw map images (tiles) specifically */
+    /* This makes the background dark and enhances contrast for non-labeled items */
+    mix-blend-mode: color-burn; /* Recommended blend for keeping labels clear */
+    filter: 
+        brightness(0.65)  /* Overall darkness (same as your current preference) */
+        contrast(1.2)    /* Sharpens building footprints */
+        saturate(0.0)    /* Removes tile color cast, keeps labels monochrome */
+        invert(0.95);    /* Inverts the dark text/roads to *light* on a *dark* map */
+}
+
+/* 2. Target the labels layer *explicitly* to override and brighten them */
+.leaflet-label-pane {
+    filter: invert(0); /* Ensure this pane does NOT get inverted like the base map */
+}
         
         .leaflet-tile {
             border: none !important;
