@@ -22,19 +22,21 @@
         }
 
         /* ---> Remove weird grey gridlines that suddenly appeared <--- */
-    .leaflet-container {
+    /* 1. Base dark background for map container */
+.leaflet-container {
     background: #0d0614 !important;
 }
 
+/* 2. Remove tile borders to fix ugly grid lines */
 .leaflet-tile {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
 }
 
-/* Adjust CARTO tile colors and darkness */
+/* 3. Reset tile pane filters so it doesn't turn white */
 .leaflet-tile-pane {
-    filter: brightness(0.65) contrast(1.3) saturate(0.1);
+    filter: none !important;
 }
         /* ---------------------------------- */
         
