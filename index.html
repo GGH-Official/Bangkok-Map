@@ -22,23 +22,22 @@
         }
 
         /* ---> Remove weird grey gridlines that suddenly appeared <--- */
-   /* 1. Base dark background matching your site */
+   /* 1. Base dark background matching your page background */
 .leaflet-container {
     background: #0d0614 !important;
 }
 
-/* 2. Fix tile grid seams */
+/* 2. Remove tile borders to fix grid line seams */
 .leaflet-tile {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
 }
 
-/* 3. Recreate the original subtle, dark, neat map look before shitty update */
+/* 3. Heavily dim and darken the bright road tiles */
 .leaflet-tile-pane {
-    mix-blend-mode: multiply !important; /* Blends base tiles into dark background */
-    opacity: 0.75 !important;            /* Dims the prominent roads to look subtle */
-    filter: contrast(1.1) brightness(0.9) !important;
+    filter: brightness(0.35) contrast(1.2) !important; /* Dims the bright grey roads down into dark tones */
+    opacity: 0.7 !important;                             /* Softens the tile layer against the #0d0614 background */
 }
         /* ---------------------------------- */
         
