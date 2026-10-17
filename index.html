@@ -22,19 +22,19 @@
         }
 
         /* ---> Remove weird grey gridlines that suddenly appeared <--- */
-    /* 1. Base dark background for map container */
+    /* 1. Dark container background */
 .leaflet-container {
     background: #0d0614 !important;
 }
 
-/* 2. Remove tile borders to fix ugly grid lines */
+/* 2. Fix ugly tile grid seam lines */
 .leaflet-tile {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
 }
 
-/* 3. Reset tile pane filters so it doesn't turn white */
+/* 3. Disable filters so the tiles don't turn white */
 .leaflet-tile-pane {
     filter: none !important;
 }
