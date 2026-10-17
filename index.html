@@ -34,9 +34,10 @@
     box-shadow: none !important;
 }
 
-/* 3. Reset the tile pane so CARTO's native colors show completely untouched */
+/* 3. Softly dim the base tile road colors */
 .leaflet-tile-pane {
-    filter: none !important;
+    opacity: 0.65; /* Lowers tile intensity slightly so roads aren't as harsh */
+    filter: brightness(0.85); /* Slightly softens contrast */
 }
         
         .leaflet-tile {
