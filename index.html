@@ -22,29 +22,20 @@
         }
 
         /* ---> Remove weird grey gridlines that suddenly appeared <--- */
-    /* 1. Prevent tile gaps/seams from showing white */
-.leaflet-container {
+    .leaflet-container {
     background: #0d0614 !important;
 }
 
-/* 2. Remove tile borders/outlines (Fixes grid lines) */
 .leaflet-tile {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
 }
 
-/* 3. Softly dim the base tile road colors */
 .leaflet-tile-pane {
-    opacity: 0.65; /* Lowers tile intensity slightly so roads aren't as harsh */
-    filter: brightness(0.85); /* Slightly softens contrast */
+    filter: none !important;
+    opacity: 1 !important;
 }
-        
-        .leaflet-tile {
-            border: none !important;
-            outline: none !important;
-            box-shadow: none !important;
-        }
         /* ---------------------------------- */
         
         #map {
@@ -322,11 +313,12 @@
         // Use preferCanvas: false to allow SVG manipulation for path texts
         const map = L.map('map', { preferCanvas: false }).setView([13.733589, 100.565204], 15);
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{r}.png?key=cb1_2hjm_1_56adebf3899dfbc5f7431626', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-            subdomains: 'abcd',
-            maxZoom: 20
-        }).addTo(map);
+     /* Dark_all to Dark_nolabels after weird update made everything look crap */
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}{r}.png?key=cb1_2hjm_1_56adebf3899dfbc5f7431626', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 20
+}).addTo(map);
 
         setTimeout(() => {
             map.invalidateSize();
