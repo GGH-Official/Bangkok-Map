@@ -22,25 +22,21 @@
         }
 
         /* ---> Remove weird grey gridlines that suddenly appeared <--- */
-      /* Fix grid lines and set dark background */
+    /* 1. Prevent tile gaps/seams from showing white */
 .leaflet-container {
     background: #0d0614 !important;
 }
 
+/* 2. Remove tile borders/outlines (Fixes grid lines) */
 .leaflet-tile {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
 }
 
-/* Perfect dark map balance: roads and labels stay clearly visible without blowing out to white */
+/* 3. Reset the tile pane so CARTO's native colors show completely untouched */
 .leaflet-tile-pane {
-    filter: brightness(0.8) contrast(1.4) saturate(0.2);
-}
-
-/* 2. Target the labels layer *explicitly* to override and brighten them */
-.leaflet-label-pane {
-    filter: invert(0); /* Ensure this pane does NOT get inverted like the base map */
+    filter: none !important;
 }
         
         .leaflet-tile {
