@@ -22,21 +22,23 @@
         }
 
         /* ---> Remove weird grey gridlines that suddenly appeared <--- */
-    /* 1. Dark container background */
+   /* 1. Base dark background matching your site */
 .leaflet-container {
     background: #0d0614 !important;
 }
 
-/* 2. Fix ugly tile grid seam lines */
+/* 2. Fix tile grid seams */
 .leaflet-tile {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
 }
 
-/* 3. Disable filters so the tiles don't turn white */
+/* 3. Recreate the original subtle, dark, neat map look before shitty update */
 .leaflet-tile-pane {
-    filter: none !important;
+    mix-blend-mode: multiply !important; /* Blends base tiles into dark background */
+    opacity: 0.75 !important;            /* Dims the prominent roads to look subtle */
+    filter: contrast(1.1) brightness(0.9) !important;
 }
         /* ---------------------------------- */
         
